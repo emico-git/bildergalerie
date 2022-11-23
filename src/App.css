@@ -4,6 +4,12 @@
   background-color: #050A30;
 }
 
+.help{
+  border-width: 3px;
+  border-style: dashed;
+  border-color: red;
+}
+
 .App {
   text-align: center;
 }
@@ -17,10 +23,6 @@
   justify-content: space-between;
   align-items: center;
   
-
-  border-width: 3px;
-  border-style: dashed;
-  border-color: red;
 }
 
 .logo {
@@ -83,4 +85,20 @@
   border-top-left-radius: 1em;
   border-bottom-left-radius: 1em;
   background-color: #000C66;
+}
+
+
+
+
+.pics{
+  width: 100%;
+}
+
+.gallery{
+  column-count: 4;
+  
+}
+
+.gallery .pics{
+  margin-bottom: 12px;
 }
