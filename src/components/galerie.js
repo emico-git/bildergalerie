@@ -1,4 +1,5 @@
 import React from 'react'
+import { useState, useEffect } from 'react';
 
 import '../App.css';
 
@@ -16,9 +17,9 @@ import Img11 from '../bilder/stock/11.jpg';
 import Img12 from '../bilder/stock/12.jpg';
 
 
-export default function galerie() {
+function Galerie() {
 
-    let data =[
+    let data_example =[
         {
             id: 1,
             imgSrc: Img1,
@@ -70,17 +71,40 @@ export default function galerie() {
         
     ]
 
+    const [images, setImages] = useState([])
+
+    useEffect(() => {
+        const fetchImages = async () => {
+            const response = await fetch(
+                `https://api.unsplash.com/photos?client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`)
+            const data = await response.json()
+            setImages(data)
+            console.log(data)
+        }
+
+        fetchImages()
+    },[])
+
   return ( 
-    <div >
-        <div className='gallery'>
-            {data.map((item, index)=> {
-                return(
-                    <div key={index}>
-                        <img className='pics' src={item.imgSrc} />
-                    </div>
-                )
-            })}
-        </div>
+    <div className='content'>
+        {!images ? (
+        <div>
+            <div className='emoticon3'/>
+            <h1 className='loading'>Loading...</h1> 
+        </div>)
+        :
+            <div className='gallery'>
+                {images.map((item, index)=> {
+                    return(
+                        <div key={index}>
+                            <img className='pics' src={item.urls.raw} />
+                        </div>
+                    )
+                })}
+            </div>
+        }
     </div>
   )
 }
+
+export default Galerie

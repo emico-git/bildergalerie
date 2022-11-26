@@ -3,14 +3,14 @@ import AOS from 'aos';
 import 'aos/dist/aos.css'
 import logo from '../bilder/logo.png'
 
-export default function header() {
+function Header() {
 
   AOS.init();
 
   return (
     <div className='header'>
         <div className='logo'>
-          <img src={logo} width='200px'></img>
+          <img src={logo} className='logo-image'></img>
           <div className='logo-name'>
             <div className='slide-border'>
               <div className=' slide-in-right1'>Emil</div>
@@ -23,3 +23,5 @@ export default function header() {
     </div>
   )
 }
+
+export default Header;

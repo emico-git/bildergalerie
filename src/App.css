@@ -2,6 +2,7 @@
 
 * {
   background-color: #050A30;
+  margin: 0;
 }
 
 .help{
@@ -22,12 +23,16 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  
+  padding-top: 30px;
+  padding-left: 30px;
 }
 
 .logo {
-  display: flex;
-  
+  display: flex; 
+}
+
+.logo-image {
+  width: 150px;
 }
 
 .logo-name {
@@ -36,9 +41,10 @@
   color: aliceblue;
   font-size: 40px;
   
-  align-items: center;
   text-align: left; 
- 
+  font-size: 30px;
+  margin-top: 40px;
+  margin-left: 10px;  
 }
 
 .slide-in-right1 {
@@ -79,16 +85,21 @@
 .about-me {
   font-family: 'Montserrat', sans-serif;
   color: aliceblue;
-  font-size: 30px;
-  padding: 2vw;
-
-  border-top-left-radius: 1em;
-  border-bottom-left-radius: 1em;
+  padding: 20px;
+  font-size: 20px;
   background-color: #000C66;
+  border-top-left-radius: 25px;
+  border-bottom-left-radius: 25px;
 }
 
 
 
+
+.content {
+  padding-top: 10vh;
+  padding-left: 10vh;
+  padding-right: 10vh;
+}
 
 .pics{
   width: 100%;
@@ -102,3 +113,50 @@
 .gallery .pics{
   margin-bottom: 12px;
 }
+
+.loading {
+  font-family: 'Montserrat', sans-serif;
+  color: aliceblue;
+  font-size: 20px;
+}
+
+.emoticon3:before {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 80px;
+    color:#FBF9FA;
+    margin-top: 2vh;
+    content: '';
+    animation: rotation infinite 1.5s;
+    margin-right: 2vw;
+}
+
+@keyframes rotation {
+    0%{
+        content: '\\(^_^)/';
+    }
+    12.5%{
+        content: '(\\^_)/';
+    }
+    25%{
+        content: '( |^)/';
+    }
+    37.5%{
+        content: '(　/)';
+    }
+    50%{
+        content: '\\(　 )/';
+    }
+    62.5%{
+        content: '(\\　)';
+    }
+    75%{ 
+        content: '\\(^| )';
+    }
+    87.5%{
+        content: '\\(_^/)';
+    }
+    100%{
+        content: '\\(^_^)/';
+    }
+}
+
