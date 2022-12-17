@@ -19,7 +19,7 @@ import Img12 from '../bilder/stock/12.jpg';
 
 function Galerie() {
 
-    let data_example =[
+    let data2 =[
         {
             id: 1,
             imgSrc: Img1,
@@ -76,7 +76,7 @@ function Galerie() {
     useEffect(() => {
         const fetchImages = async () => {
             const response = await fetch(
-                `https://api.unsplash.com/photos?client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`)
+                `https://api.unsplash.com/photos?page=3&client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`)
             const data = await response.json()
             setImages(data)
             console.log(data)
@@ -97,7 +97,14 @@ function Galerie() {
                 {images.map((item, index)=> {
                     return(
                         <div key={index}>
-                            <img className='pics' src={item.urls.raw} />
+                            <img className='pics' src={item.urls.regular} />
+                        </div>
+                    )
+                })}
+                {data2.map((item, index)=> {
+                    return(
+                        <div key={index}>
+                            <img className='pics' src={item.imgSrc} />
                         </div>
                     )
                 })}
