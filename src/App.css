@@ -132,31 +132,31 @@
 
 @keyframes rotation {
     0%{
-        content: '\\(^_^)/';
+        content: '　\\(^_^)/　';
     }
     12.5%{
-        content: '(\\^_)/';
+        content: '　(\\^_)/　';
     }
     25%{
-        content: '( |^)/';
+        content: '　( |^)/　';
     }
     37.5%{
-        content: '(　/)';
+        content: '　(　/)　';
     }
     50%{
-        content: '\\(　 )/';
+        content: '　\\(　 )/　';
     }
     62.5%{
-        content: '(\\　)';
+        content: '　(\\　)　';
     }
     75%{ 
-        content: '\\(^| )';
+        content: '　\\(^| )　';
     }
     87.5%{
-        content: '\\(_^/)';
+        content: '　\\(_^/)　';
     }
     100%{
-        content: '\\(^_^)/';
+        content: '　\\(^_^)/　';
     }
 }
 

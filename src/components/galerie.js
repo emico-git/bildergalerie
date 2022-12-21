@@ -1,5 +1,7 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import ClipLoader from "react-spinners/PacmanLoader"
 
 import '../App.css';
 
@@ -72,24 +74,30 @@ function Galerie() {
     ]
 
     const [images, setImages] = useState([])
+    const [loading, setLoading] = useState(false)
+
+    const fetchImages = async () => {
+        const response = await fetch(
+            `https://api.unsplash.com/photos?page=3&client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`)
+        const data = await response.json()
+        setImages(data)
+        console.log(data)
+    }
 
     useEffect(() => {
-        const fetchImages = async () => {
-            const response = await fetch(
-                `https://api.unsplash.com/photos?page=3&client_id=${process.env.REACT_APP_UNSPLASH_API_KEY}`)
-            const data = await response.json()
-            setImages(data)
-            console.log(data)
-        }
-
         fetchImages()
+        setLoading(true)
+        setTimeout(() => {
+            setLoading(false)
+        }, 8000)
     },[])
 
   return ( 
     <div className='content'>
-        {!images ? (
+        {loading ? (
         <div>
             <div className='emoticon3'/>
+            <br></br>
             <h1 className='loading'>Loading...</h1> 
         </div>)
         :
