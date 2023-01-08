@@ -1,7 +1,6 @@
 import React from 'react'
 import { useState, useEffect } from 'react';
-import { LazyLoadImage } from "react-lazy-load-image-component";
-import ClipLoader from "react-spinners/PacmanLoader"
+
 
 import '../App.css';
 
@@ -105,14 +104,14 @@ function Galerie() {
                 {images.map((item, index)=> {
                     return(
                         <div key={index}>
-                            <img className='pics' src={item.urls.regular} />
+                            <img onClick={()=> window.open(item.urls.regular, "_blank")} className='pics' src={item.urls.regular} />
                         </div>
                     )
                 })}
                 {data2.map((item, index)=> {
                     return(
                         <div key={index}>
-                            <img className='pics' src={item.imgSrc} />
+                            <img onClick={()=> window.open(item.imgSrc, "_blank")} className='pics' src={item.imgSrc} />
                         </div>
                     )
                 })}

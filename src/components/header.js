@@ -9,7 +9,7 @@ function Header() {
 
   return (
     <div className='header'>
-        <div className='logo'>
+        <div onClick={() => window.location.reload(true)} className='logo'>
           <img src={logo} className='logo-image'></img>
           <div className='logo-name'>
             <div className='slide-border'>
@@ -19,7 +19,7 @@ function Header() {
           </div>
         </div>
         <div className='titel'>Bildergalerie</div>
-        <div className='about-me'>Über mich</div>
+        <div onClick={()=> window.open('https://emil.collins.at/', "_blank")} className='about-me'>Über mich</div>
     </div>
   )
 }

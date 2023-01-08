@@ -29,6 +29,7 @@
 
 .logo {
   display: flex; 
+  cursor: pointer;
 }
 
 .logo-image {
@@ -90,6 +91,7 @@
   background-color: #000C66;
   border-top-left-radius: 25px;
   border-bottom-left-radius: 25px;
+  cursor: pointer;
 }
 
 
@@ -103,6 +105,7 @@
 
 .pics{
   width: 100%;
+  cursor: pointer;
 }
 
 .gallery{
